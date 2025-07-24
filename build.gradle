@@ -1,5 +1,7 @@
 plugins {
     id 'java'
+    id 'org.springframework.boot' version '2.7.3'
+    id 'io.spring.dependency-management' version '1.0.13.RELEASE'
 }
 
 group = 'com.ikrishmedia'
@@ -10,6 +12,7 @@ repositories {
 }
 
 dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter'
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
     testImplementation('org.junit.jupiter:junit-jupiter-params:5.12.2')
@@ -19,3 +22,11 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+
+// Configure the project to use Gradle 7.5 locally
+// Run the following command to generate the wrapper:
+// gradle wrapper --gradle-version 7.5 --distribution-type bin
+//
+// Or use a local Gradle 7.5 installation directly:
+// /path/to/gradle-7.5/bin/gradle build
+// /path/to/gradle-7.5/bin/gradle bootRun
